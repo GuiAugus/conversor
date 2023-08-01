@@ -22,7 +22,9 @@ public class Main {
                 		int resposta = JOptionPane.showConfirmDialog(null, "Deseja continuar? ");
                 		if (JOptionPane.OK_OPTION == resposta) {
                 			System.out.println("Escolha opcão"); 
-                		}                		
+                		} else {
+                			JOptionPane.showMessageDialog(null, "Programa finalizado");
+                		}
                 	}else {
                 		JOptionPane.showMessageDialog(null, "Opcao inválida");
                 	}
