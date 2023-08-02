@@ -1,12 +1,14 @@
 package conversorMoedas;
 
 import conversorMoedas.ConverteMoedas;
+import conversorMoedas.ConverteMoedasReais;
 
 import javax.swing.*;
 
 public class funcao {
 	
 	ConverteMoedas moedas = new ConverteMoedas();
+	ConverteMoedasReais reais = new ConverteMoedasReais();
 	
 	public void converterMoeda(double valorRecebido) {
 		String opcao = (JOptionPane.showInputDialog(null,
@@ -16,8 +18,12 @@ public class funcao {
                 		"Reais para Euro",
                 		"Reais para Libras Esterlinas",
                 		"Reais para Peso Argentino",
-                		"Reais para Peso Chileno"
-                		}, "Escolha")).toString();
+                		"Reais para Peso Chileno",
+                		"Dolar para Reais",
+                		"Euro para Reais",
+                		"Libras Esterlinas para Reais",
+                		"Peso Argentino para Reais",
+                		"Peso Chileno para Reais"}, "Escolha")).toString();
 		
 		switch (opcao) {
 		case "Reais para Dolar":
@@ -40,6 +46,25 @@ public class funcao {
 			moedas.converterPesoChileno(valorRecebido);
 			break;
 		
+		case "Dolar para Reais":
+			reais.converterDolarParaReais(valorRecebido);
+			break;
+			
+		case "Euro para Reais":
+			reais.converterEuroParaReais(valorRecebido);
+			break;		
+			
+		case "Libras Esterlinas para Reais":
+			reais.converterLibrasEsterlinasParaReais(valorRecebido);
+			break;
+		
+		case "Peso Argentino para Reais":
+			reais.converterPesoArgentinoParaReais(valorRecebido);
+			break;
+			
+		case "Peso Chileno para Reais":
+			reais.converterPesoChilenoParaReais(valorRecebido);
+			break;
 		}
 	}
 
