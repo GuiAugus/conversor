@@ -19,4 +19,4 @@ Realizar câmbio de moedas, converter medidas de comprimento e conversão de tem
 
 #### JAVA <h4>
 
-* Funcionalidade básicas de criacão de janela com o pacote Javax.
+* Funcionalidade básicas de criacão de janela com a biblioteca Swing do Java.
