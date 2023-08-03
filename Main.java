@@ -2,6 +2,7 @@
 import javax.swing.*;
 
 import conversorMoedas.funcao;
+import conversorTemperatura.funcaoTemperatura;
 import conversorComprimento.funcaoComprimento;
 
 
@@ -9,11 +10,18 @@ public class Main {
     public static void main(String[] args) {
     	funcao moeda = new funcao();
     	funcaoComprimento comprimento = new funcaoComprimento();
+    	funcaoTemperatura temperatura = new funcaoTemperatura();
 
         while (true) {
 
-            String opcao = JOptionPane.showInputDialog(null, "Escolha uma opção ", "Menu", JOptionPane.PLAIN_MESSAGE, null, new Object[]{"Conversor de Moeda",
-            		"Conversor de Comprimento"}, "Escolha").toString();
+            String opcao = JOptionPane.showInputDialog(null,
+			 "Escolha uma opção ", "Menu",
+			 JOptionPane.PLAIN_MESSAGE,
+			 null, 
+			 		new Object[]{"Conversor de Moeda",
+            		"Conversor de Comprimento",
+					"Conversor de Temperatura"},
+					"Escolha").toString();
 
             switch (opcao) {
                 case "Conversor de Moeda":
@@ -49,12 +57,23 @@ public class Main {
                 		JOptionPane.showMessageDialog(null, "Opcao inválida");
                 	}
                 	break;
-                		
-                		
+                	
+                case "Conversor de Temperatura":
+                	String inputTemp = JOptionPane.showInputDialog("Insira um valor: ");
+                	if (check(inputTemp)) {
+                		double valorRecebido = Double.parseDouble(inputTemp);
+                		temperatura.converterTemperatura(valorRecebido);
+
+                		int resposta = JOptionPane.showConfirmDialog(null, "Deseja continuar? ");
+                		if (JOptionPane.OK_OPTION == resposta) {
+                			System.out.println(" ");                		}
+                	} else {
+                		JOptionPane.showConfirmDialog(null, "Opcao Inválida");
                 	}
+                	break;                		
+                }
             }
-        }
-  
+        }  
     
     public static boolean check(String input) {
     	try {
@@ -65,6 +84,4 @@ public class Main {
     		return false;
     	}
     }
-
-
 }
